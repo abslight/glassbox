@@ -40,8 +40,10 @@ app.use(session({
 app.use(checkUserSession)
 
 //--------------Endpoints-------------//
-
-
+app.post('/login', ctrl.loginUser)
+app.post('/register', ctrl.registerUser)
+app.post('/logout', ctrl.logout)
+app.get('/checkuser', ctrl.checkUser)
 //--------------Listening-------------//
 
 app.listen(SERVER_PORT, () => {

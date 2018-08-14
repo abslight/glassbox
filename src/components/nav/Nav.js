@@ -10,6 +10,9 @@ class App extends Component {
                 <Link to='/inv'>
                     Inventory
                 </Link>
+                <Link to='/login'>
+                    Login
+                </Link>
             </div >
         );
     }
