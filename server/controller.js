@@ -69,7 +69,18 @@ module.exports = {
     },
     logout(req, res, next) {
         req.session.destroy()
+        sessionIDCount = 1;
         res.status(200).send(req.session)
         console.log(req.session)
     },
+    getInv(req, res, next) {
+        const db = req.app.get('db')
+        db.getInventory()
+            .then(inv => res.status(200).send(inv))
+            .catch((e) => {
+                console.log(e);
+                res.status(500).send(e)
+            }
+            )
+    }
 }

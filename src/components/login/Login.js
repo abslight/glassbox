@@ -3,8 +3,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { updateUser } from '../../ducks/reducer'
-class Login extends Component {
 
+class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -26,8 +26,6 @@ class Login extends Component {
                     // this.setState({ error: '' })
                     this.setState({ loggedIn: 'You logged in successfully!', error: '', redirectID: res.data.userID });
                     this.props.updateUser(res.data);
-                    this.props.loginToggleFn();
-                    this.props.menuProfile(!this.props.profToggle);
                 } else if (res.data === 'Invalid Password') {
                     this.setState({ error: 'Invalid Password' })
                 } else if (res.data === 'User does not exist') {
@@ -50,8 +48,6 @@ class Login extends Component {
                 else {
                     this.setState({ loggedIn: 'You are now registered and have logged in successfully!', error: '', redirectID: res.data.userID });
                     this.props.updateUser(res.data);
-                    this.props.loginToggleFn();
-                    this.props.menuProfile(!this.props.profToggle);
                 }
             }
             )

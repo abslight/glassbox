@@ -44,6 +44,7 @@ app.post('/login', ctrl.loginUser)
 app.post('/register', ctrl.registerUser)
 app.post('/logout', ctrl.logout)
 app.get('/checkuser', ctrl.checkUser)
+app.get('/inventory', ctrl.getInv)
 //--------------Listening-------------//
 
 app.listen(SERVER_PORT, () => {

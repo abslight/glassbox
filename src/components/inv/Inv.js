@@ -5,7 +5,7 @@ class Inv extends Component {
         return (
             <div>
                 The Glass Box
-      </div>
+            </div>
         );
     }
 }

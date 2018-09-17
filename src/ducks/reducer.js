@@ -1,6 +1,7 @@
 import axios from 'axios'
 let initialState = {
-    user: undefined
+    user: undefined,
+    inventory: []
 }
 
 const FULFILLED = '_FULFILLED';
@@ -8,6 +9,7 @@ const PENDING = '_PENDING';
 const UPDATE_USER = 'UPDATE_USER';
 const CHECK_USER = 'CHECK_USER';
 const DESTROY_SESSION = 'DESTROY_SESSION';
+const GET_INV = 'GET_INV'
 
 export default function reducer(state = initialState, action) {
     let { type, payload } = action;
@@ -18,6 +20,8 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { user: payload })
         case DESTROY_SESSION + FULFILLED:
             return Object.assign({}, state, { user: payload })
+        case GET_INV + FULFILLED:
+            return Object.assign({}, state, { inventory: payload });
         default:
             return state;
     }
@@ -42,5 +46,12 @@ export function logOut() {
     return {
         type: DESTROY_SESSION,
         payload: logout
+    }
+}
+export function getInv() {
+    let inv = axios.get('/inventory').then(res => res.data)
+    return {
+        type: GET_INV,
+        payload: inv
     }
 }
