@@ -24,7 +24,7 @@ class Login extends Component {
             axios.post('/login', { email, password }).then(res => {
                 if (res.data.length !== 0) {
                     // this.setState({ error: '' })
-                    this.setState({ loggedIn: 'You logged in successfully!', error: '', redirectID: res.data.userID });
+                    this.setState({ loggedIn: `${res.data}`, error: '', redirectID: res.data.userID });
                     this.props.updateUser(res.data);
                 } else if (res.data === 'Invalid Password') {
                     this.setState({ error: 'Invalid Password' })
@@ -35,6 +35,7 @@ class Login extends Component {
                 }
             })
         }
+        console.log(this.state.loggedIn)
     }
     register() {
         const { username, email, password } = this.state

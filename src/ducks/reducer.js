@@ -49,6 +49,7 @@ export function logOut() {
     }
 }
 export function getInv() {
+    console.log('ping')
     let inv = axios.get('/inventory').then(res => res.data)
     return {
         type: GET_INV,
