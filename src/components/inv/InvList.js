@@ -11,6 +11,7 @@ class InvList extends Component {
         }
     }
     componentDidMount() {
+        // this.props.getInv()
         let { inventory } = this.props;
         // console.log(inventory)
         if (inventory.length === 0) {
@@ -19,9 +20,12 @@ class InvList extends Component {
             this.setState({ inventory: inventory });
         }
     }
+    // shouldComponentUpdate(){
+
+    // }
 
     render() {
-        console.log(this.state.inventory)
+        // console.log(this.state.inventory)
         let allInv = this.state.inventory.map(e => {
             return (
                 <div>

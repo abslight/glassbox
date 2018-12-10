@@ -1,0 +1,10 @@
+#parent{
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+#parent div{
+    width: 15%;
+    height: 20%;
+}
