@@ -10,7 +10,10 @@ class App extends Component {
         }
     }
     componentWillMount() {
-        this.props.getInv().then(res => console.log(res));
+        if (this.state.inventory.length === 0) {
+            this.props.getInv()
+            this.setState({ inventory: this.props.inventory })
+        }
     }
     render() {
         return (
@@ -30,7 +33,7 @@ class App extends Component {
 }
 function mapStateToProps(state) {
     return {
-        inv: state.inventory
+        inventory: state.inventory
     }
 }
 

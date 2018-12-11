@@ -11,22 +11,16 @@ class InvList extends Component {
         }
     }
     componentDidMount() {
-        // this.props.getInv()
         let { inventory } = this.props;
-        // console.log(inventory)
         if (inventory.length === 0) {
             this.props.getInv().then(res => this.setState({ inventory: inventory }))
         } else {
             this.setState({ inventory: inventory });
         }
     }
-    // shouldComponentUpdate(){
-
-    // }
-
     render() {
-        // console.log(this.state.inventory)
-        let allInv = this.state.inventory.map(e => {
+        console.log(this.props.inventory)
+        let allInv = this.props.inventory.map(e => {
             return (
                 <div>
                     <Inv

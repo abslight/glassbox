@@ -3,7 +3,6 @@ import './itemCard.css'
 class Inv extends Component {
     constructor(props) {
         super(props);
-        console.log(props)
     }
     render() {
         console.log(this.props.item)

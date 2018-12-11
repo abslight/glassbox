@@ -50,7 +50,7 @@ export function logOut() {
 }
 export function getInv() {
     let inv = axios.get('/inventory').then(res => res.data)
-    console.log(inv)
+    console.log(initialState.inventory)
     return {
         type: GET_INV,
         payload: inv
