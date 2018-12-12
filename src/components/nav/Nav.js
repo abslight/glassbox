@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getInv } from '../../ducks/reducer'
 import { Link } from 'react-router-dom'
+import './Nav.css'
 class App extends Component {
     constructor() {
         super();
@@ -17,16 +18,22 @@ class App extends Component {
     }
     render() {
         return (
-            <div>
-                <Link to='/' exact>
-                    Home
+            <div id='nav'>
+                <div>
+                    <Link to='/' exact>
+                        Home
                 </Link>
-                <Link to='/inv'>
-                    Inventory
+                </div>
+                <div>
+                    <Link to='/inv'>
+                        Inventory
                 </Link>
-                <Link to='/login'>
-                    Login
+                </div>
+                <div>
+                    <Link to='/login'>
+                        Login
                 </Link>
+                </div>
             </div >
         );
     }

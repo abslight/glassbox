@@ -5,15 +5,18 @@ class Inv extends Component {
         super(props);
     }
     render() {
-        console.log(this.props.item)
         const { comname, sciname, img, price } = this.props.item
         return (
             <div id='parent'>
                 <div>
                     <h1>{comname}</h1>
-                    <img src={img} />
-                    <h5>{sciname}</h5>
-                    <h3>${price}</h3>
+                    <div id='imgBox'>
+                        <img src={img} />
+                    </div>
+                    <div id='prodDetails'>
+                        <h5>{sciname}</h5>
+                        <h3>${price}</h3>
+                    </div>
                 </div>
             </div>
         );

@@ -19,7 +19,6 @@ class InvList extends Component {
         }
     }
     render() {
-        console.log(this.props.inventory)
         let allInv = this.props.inventory.map(e => {
             return (
                 <div>
